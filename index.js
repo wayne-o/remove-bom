@@ -15,8 +15,13 @@ function RemoveBom(inTree, options) {
 
 RemoveBom.prototype.write = function(readTree, destDir) {
 	var self = this;
+
 	return readTree(this.inTree)
 		.then(function(srcDir) {
+
+            console.log(self.options);
+            console.log(require('util').inspect(srcDir, { depth: null }));
+
 			replace({
 				regex: "\uFEFF",
 				replacement: "",
