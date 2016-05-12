@@ -2,4 +2,4 @@
 
 Usage:
 
-tree = removeBom(tree, '/path/to.js');
+```tree = removeBom(tree, '/path/to.js');```
