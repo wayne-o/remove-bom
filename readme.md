@@ -1,5 +1,5 @@
-### Removes BOM characters from source files
+### Broccoli plugin to remove BOM characters from source files
 
-#### Usage:
+Usage:
 
 tree = removeBom(tree, '/path/to.js');
