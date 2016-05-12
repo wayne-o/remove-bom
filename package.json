@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/wayne-o/remove-bom/issues"
   },
-  "homepage": "https://github.com/wayne-o/remove-bom#readme"
+  "homepage": "https://github.com/wayne-o/remove-bom#readme",
+  "dependencies": {
+    "broccoli-writer": "^0.1.1",
+    "replace": "^0.3.0"
+  }
 }
