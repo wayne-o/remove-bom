@@ -1,0 +1,19 @@
+{
+  "name": "remove-bom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wayne-o/remove-bom.git"
+  },
+  "author": "wayne douglas <wayne.douglas@makemedia.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wayne-o/remove-bom/issues"
+  },
+  "homepage": "https://github.com/wayne-o/remove-bom#readme"
+}
