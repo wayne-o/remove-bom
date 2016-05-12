@@ -1,5 +1,7 @@
 var brocWriter = require('broccoli-writer');
 var replace = require('replace');
+var fs = require('fs-extra');
+
 module.exports = RemoveBom;
 RemoveBom.prototype = Object.create(brocWriter.prototype);
 RemoveBom.prototype.constructor = RemoveBom;
@@ -18,15 +20,17 @@ RemoveBom.prototype.write = function(readTree, destDir) {
 
 	return readTree(this.inTree)
 		.then(function(srcDir) {
-
-            console.log(self.options);
-            console.log(require('util').inspect(srcDir, { depth: null }));
-
 			replace({
 				regex: "\uFEFF",
 				replacement: "",
 				paths: [srcDir + self.options],
 				silent: false
 			});
+
+			try {
+				fs.copySync(srcDir + self.options, destDir + self.options);
+			} catch (err) {
+				console.error(err);
+			}
 		});
 };

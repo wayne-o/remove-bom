@@ -18,6 +18,7 @@
   "homepage": "https://github.com/wayne-o/remove-bom#readme",
   "dependencies": {
     "broccoli-writer": "^0.1.1",
+    "fs-extra": "^0.30.0",
     "replace": "^0.3.0"
   }
 }
