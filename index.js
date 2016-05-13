@@ -28,7 +28,6 @@ RemoveBom.prototype.write = function(readTree, destDir) {
 					silent: false
 				});
 				fs.copySync(srcDir + self.options, destDir + self.options);
-				//check exists first:
 				if (fs.existsSync(srcDir + self.options.replace('.js', '.map'))) {
 					fs.copySync(srcDir + self.options.replace('.js', '.map'), destDir + self.options.replace('.js', '.map'));
 				}
