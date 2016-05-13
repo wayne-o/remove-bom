@@ -20,15 +20,19 @@ RemoveBom.prototype.write = function(readTree, destDir) {
 
 	return readTree(this.inTree)
 		.then(function(srcDir) {
-			replace({
-				regex: "\uFEFF",
-				replacement: "",
-				paths: [srcDir + self.options],
-				silent: false
-			});
-
 			try {
+				replace({
+					regex: "\uFEFF",
+					replacement: "",
+					paths: [srcDir + self.options],
+					silent: false
+				});
 				fs.copySync(srcDir + self.options, destDir + self.options);
+				//check exists first:
+				if (fs.existsSync(srcDir + self.options.replace('.js', '.map'))) {
+					fs.copySync(srcDir + self.options.replace('.js', '.map'), destDir + self.options.replace('.js', '.map'));
+				}
+
 			} catch (err) {
 				console.error(err);
 			}
